@@ -5,25 +5,29 @@ public class SumStop {
     public static void main(String[] args) {
 
         int sum = 0;
-        Scanner scanner1 = new Scanner(System.in);
-        int i = scanner1.nextInt();
+
+        Scanner input = new Scanner(System.in);
+
 
 
         while (true) {
 
-            sum = sum + i;
+            String i = input.next();
 
-
-            String scanner2 = scanner1.nextLine();
-            if (scanner2.equals("Стоп")) {
-                System.out.println("Сумма = " + sum);
+            if (i.equals("Стоп") && sum == 0) {
+                System.out.println("Вы ничего не ввели");
                 break;
 
+
+            }else if(i.equals("Стоп")) {
+                System.out.println("Сумма = " + sum );
+                break;
             }
+            sum = sum + Integer.parseInt(i);
 
         }
 
-
     }
-}
 
+
+}
